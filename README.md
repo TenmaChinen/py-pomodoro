@@ -5,7 +5,7 @@ Pomodoro GUI in Python Tkinter
  -->
 
 ## Main Screen
-![python_4jR5dErJor](https://user-images.githubusercontent.com/36393143/204918149-8d1dabd3-918e-4720-b4ae-88205102d688.png | width=100)
+<img src="https://user-images.githubusercontent.com/36393143/204918149-8d1dabd3-918e-4720-b4ae-88205102d688.png" width=100/>
 
 ## Settings Dialog
-![python_cCmvRZwEP3](https://user-images.githubusercontent.com/36393143/204918169-c43160eb-ed38-4ee9-baa9-b33c38b55d34.png | width=100)
+<img src="https://user-images.githubusercontent.com/36393143/204918169-c43160eb-ed38-4ee9-baa9-b33c38b55d34.png" width=100 />
