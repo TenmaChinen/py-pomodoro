@@ -5,6 +5,7 @@ class Controller:
     def __init__(self, model, view):
         self.model = model
         self.view = view
+        self.set_mode(mode=self.model.WORK)
 
     def on_click_play(self, state):
         if self.view.timer.remaining_time != 0:
@@ -25,13 +26,14 @@ class Controller:
             self.set_mode(mode=self.model.LONG_BREAK)
 
     def set_mode(self, mode):
-        print(mode)
+        d_settings = self.model.d_settings
+
         if mode == self.model.WORK:
-            self.view.timer.set_timer(time=self.model.work_time)
+            self.view.timer.set_timer(time=d_settings['work_time'])
         elif mode == self.model.BREAK:
-            self.view.timer.set_timer(time=self.model.break_time)
+            self.view.timer.set_timer(time=d_settings['break_time'])
         elif mode == self.model.LONG_BREAK:
-            self.view.timer.set_timer(time=self.model.long_break_time)
+            self.view.timer.set_timer(time=d_settings['long_break_time'])
 
         self.model.mode = mode
         self.view.btn_play.set_state(False)
@@ -57,3 +59,14 @@ class Controller:
             self.set_mode(self.model.WORK)
 
         self.view.timer.start()
+
+
+    def on_click_settings(self):
+        self.view.dialog_settings.set_fields(d_data=self.model.d_settings)
+        self.view.dialog_settings.show()
+
+    def on_dialog_click_save(self,d_data):
+        self.model.d_settings = d_data
+        self.view.dialog_settings.hide()
+        self.model.save_settings()
+        # print(d_settings)
