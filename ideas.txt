@@ -1,0 +1,22 @@
+· Save data by current day
+
+{
+	'08-07-2022' : [ work_1 , work_2 , ... , work_n ],
+	'09-07-2022' : [ work_1 , work_2 , ... , work_n ],
+	'10-07-2022' : [ work_1 , work_2 , ... , work_n ],
+	···
+}
+
+work_1 : {
+	minutes : 30,
+	start : 12:30,
+	end: 13:05 # Maybe you stopped
+}
+
+
+· start is registered when the timer starts
+· end is registered when the timer is over
+
+
+· Data can be shown as plotbar with the total
+amount of time worked each day.
