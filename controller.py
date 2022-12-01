@@ -45,7 +45,7 @@ class Controller:
 
         if self.model.mode == self.model.WORK:
 
-            if self.model.work_break_counter == self.model.work_break_reps:
+            if self.model.work_break_counter == self.model.d_settings['work_break_reps']:
                 self.set_mode(self.model.LONG_BREAK)
             else:
                 self.set_mode(self.model.BREAK)
@@ -60,13 +60,12 @@ class Controller:
 
         self.view.timer.start()
 
-
     def on_click_settings(self):
         self.view.dialog_settings.set_fields(d_data=self.model.d_settings)
         self.view.dialog_settings.show()
 
-    def on_dialog_click_save(self,d_data):
+    def on_dialog_click_save(self, d_data):
         self.model.d_settings = d_data
         self.view.dialog_settings.hide()
+        self.set_mode(mode=self.model.mode)
         self.model.save_settings()
-        # print(d_settings)
