@@ -32,6 +32,7 @@ class View:
         root.resizable(False, False)
         root.title('Pomodoro')
         root.config(bg=BG_1)
+        root.iconbitmap('assets/images/pomodoro.ico')
         # DEBUG PURPOSES
         root.bind_all('<Control-q>', lambda e : root.destroy())
         root.protocol('WM_DELETE_WINDOW', self.__on_closing)
